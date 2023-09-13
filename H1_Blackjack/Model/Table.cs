@@ -7,68 +7,37 @@ using System.Threading.Tasks;
 namespace H1_Blackjack.Model
 {
     /// <summary>
-    /// Class <see cref="Table"/> represents the table which the cards of the dealer and the user is on
+    /// Class <see cref="Table"/> represents the table which holds the cards of the dealer and user
     /// </summary>
     internal class Table
     {
-        private byte[] _dealerCards = new byte[21];
-        private byte _dealerCardsCount = 0;
-        private byte[] _userCards = new byte[21];
-        private byte _userCardsCount = 0;
+        private List<Card> _dealerCards = new List<Card>();
+        private List<Card> _playerCards = new List<Card>();
+        private byte _dealerCardsTotal;
+        private byte _playerCardsTotal; 
 
-        public byte[] DealerCards
+        public List<Card> DealerCard
         {
             get { return _dealerCards; }
             set { _dealerCards = value; }
         }
 
-        public byte[] UserCards
+        public List<Card> PlayerCard
         {
-            get { return _userCards; }
-            set { _userCards = value; }
+            get { return _playerCards; }
+            set { _playerCards = value; }
         }
 
-        public byte DealerCardsCount
+        public byte DealerCardTotal
         {
-            get { return _dealerCardsCount; }
-            set { _dealerCardsCount = value; }
+            get { return _dealerCardsTotal; }
+            set { _dealerCardsTotal = value; }
         }
 
-        public byte UserCardsCount
+        public byte PlayerCardTotal
         {
-            get { return _userCardsCount; }
-            set { _userCardsCount = value; }
+            get { return _playerCardsTotal; }
+            set { _playerCardsTotal = value; }
         }
-
-        /// <summary>
-        /// Gets total sum of cards of a player
-        /// </summary>
-        /// <param name="isDealer">is a player or not</param>
-        /// <returns>A byte. Is the total sum of cards of a player</returns>
-        public byte GetTotal(bool isDealer)
-        {
-            byte total = 0;
-
-            // Total sum of dealer cards
-            if(isDealer)
-            {
-                for (int i = 0; i < _dealerCardsCount; i++)
-                {
-                    total += _dealerCards[i];
-                }
-            }
-
-            // Total sum of user cards
-            else
-            {
-                for (int i = 0; i < _userCardsCount; i++)
-                {
-                    total += _userCards[i];
-                }
-            }
-
-            return total;
-        }
-
     }
 }

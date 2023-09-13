@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace H1_Blackjack
+namespace H1_Blackjack.Model
 {
-    /// <summary>
-    /// Struct <see cref="Config"/> is a set of configurations
-    /// </summary>
-    public struct Config
+    internal struct Config
     {
         public byte cardsAmount;
         public byte cardTypes;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using H1_Blackjack.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +11,9 @@ namespace H1_Blackjack
     {
         static void Main(string[] args)
         {
-            Controller controller = new Controller();
-            controller.StartGame();
+            Game game = new Game();
+            game.Start();
+            Console.ReadLine();
         }
     }
 }

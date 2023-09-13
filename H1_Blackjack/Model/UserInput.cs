@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 namespace H1_Blackjack.Model
 {
     /// <summary>
-    /// Class <see cref="UserInput"/> represents all input from user
+    /// Class <see cref="UserInput"/> represents input from user
     /// </summary>
     internal class UserInput
     {
         /// <summary>
-        /// Gets input from user
+        /// Gets a input by user
         /// </summary>
-        /// <returns>A string. Which contains what the user has written</returns>
-        public string GetUserInput()
+        /// <returns>A string. Input from user</returns>
+        public string GetInput()
         {
             return Console.ReadLine();
         }
